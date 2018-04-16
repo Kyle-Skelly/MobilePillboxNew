@@ -9,11 +9,12 @@ import com.google.gson.*;
 
 public class JSONTester {
 
+
     public static void main(String[] args) throws Exception {
 
         Gson g = new Gson();
 
-        URL FDAServer = new URL("https://api.fda.gov/drug/label.json?search=brand_name:\"advil\"");
+        URL FDAServer = new URL("https://api.fda.gov/drug/label.json?");
 
         HttpURLConnection conn = (HttpURLConnection)
                 FDAServer.openConnection();
@@ -21,6 +22,10 @@ public class JSONTester {
 
         InputStreamReader inputStream = new InputStreamReader(conn.getInputStream(), "UTF-8");
 
-        //Yet to make Medicine Classes, will make in next update
+        Medication advil = g.fromJson(inputStream, Medication.class);
+
+
+
+        System.out.print(advil);
     }
 }
