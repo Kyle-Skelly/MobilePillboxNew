@@ -2,26 +2,28 @@ package com.example.kyleskelly.searchbarapp;
 
 import java.net.URL;
 import java.util.Arrays;
+import com.google.gson.*;
 
 public class Medication {
-    private NestedMedication[] NestedMedication;
 
-    public Medication(com.example.kyleskelly.searchbarapp.NestedMedication[] nestedMedication) {
-        NestedMedication = nestedMedication;
+    private Results results;
+
+    public Medication(Results results) {
+        this.results = results;
     }
 
-    public com.example.kyleskelly.searchbarapp.NestedMedication[] getNestedMedication() {
-        return NestedMedication;
+    public Results getResults() {
+        return results;
     }
 
-    public void setNestedMedication(com.example.kyleskelly.searchbarapp.NestedMedication[] nestedMedication) {
-        NestedMedication = nestedMedication;
+    public void setResults(Results results) {
+        this.results = results;
     }
 
     @Override
     public String toString() {
         return "Medication{" +
-                "NestedMedication=" + Arrays.toString(NestedMedication) +
+                "results=" + results +
                 '}';
     }
 }
