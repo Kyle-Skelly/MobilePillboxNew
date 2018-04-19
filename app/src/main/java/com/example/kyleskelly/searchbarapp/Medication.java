@@ -6,24 +6,24 @@ import com.google.gson.*;
 
 public class Medication {
 
-    private Results results;
+    private Results[] results;
 
-    public Medication(Results results) {
+    public Medication(Results[] results) {
         this.results = results;
     }
 
-    public Results getResults() {
+    public Results[] getResults() {
         return results;
     }
 
-    public void setResults(Results results) {
+    public void setResults(Results[] results) {
         this.results = results;
     }
 
     @Override
     public String toString() {
         return "Medication{" +
-                "results=" + results +
+                "results=" + Arrays.toString(results) +
                 '}';
     }
 }
