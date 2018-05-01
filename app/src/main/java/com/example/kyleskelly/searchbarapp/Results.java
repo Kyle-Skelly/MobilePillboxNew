@@ -3,13 +3,13 @@ package com.example.kyleskelly.searchbarapp;
 import java.util.Arrays;
 
 public class Results {
-    protected int effective_time;
-    protected String[] inactive_ingredient;
-    protected String[] keep_out_of_reach_of_children;
-    protected String[] purpose;
-    protected String[] warnings;
-    protected String[] questions;
-    protected String[] spl_product_data_elements;
+     private int effective_time;
+     private String[] inactive_ingredient;
+     private String[] keep_out_of_reach_of_children;
+     private String[] purpose;
+     private String[] warnings;
+     private String[] questions;
+     private String[] spl_product_data_elements;
 
     public Results(int effective_time, String[] inactive_ingredient, String[] keep_out_of_reach_of_children, String[] purpose, String[] warnings, String[] questions, String[] spl_product_data_elements) {
         this.effective_time = effective_time;
@@ -89,4 +89,5 @@ public class Results {
                 ", spl_product_data_elements=" + Arrays.toString(spl_product_data_elements) +
                 '}';
     }
+
 }

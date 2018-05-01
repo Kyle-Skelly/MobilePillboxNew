@@ -23,6 +23,9 @@ public class MainActivity extends AppCompatActivity {
     DatabaseHelper myDB;
     Button btnAdd;
     EditText editText;
+    ListView listView;
+    String url = "http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?apikey=9htuhtcb4ymusd73d4z6jxcj";
+
 
 
     @Override
@@ -38,10 +41,14 @@ public class MainActivity extends AppCompatActivity {
 
         //populate an ArrayList<String> from the database and then view it
         ArrayList<String> theList = new ArrayList<>();
+
         Cursor data = myDB.getListContents();
+
+
         if(data.getCount() == 0){
             Toast.makeText(this, "There are no contents in this list!",Toast.LENGTH_LONG).show();
-        }else{
+        }
+        else{
             while(data.moveToNext()){
                 theList.add(data.getString(1));
                 ListAdapter listAdapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,theList);
@@ -62,6 +69,8 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+
     }
 
     public void AddData(String newEntry) {

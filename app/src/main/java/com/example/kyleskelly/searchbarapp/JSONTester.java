@@ -2,6 +2,7 @@ package com.example.kyleskelly.searchbarapp;
 
 import java.net.*;
 import java.io.*;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 import com.google.gson.*;
@@ -25,8 +26,8 @@ public class JSONTester {
         InputStreamReader inputStream = new InputStreamReader(conn.getInputStream(), "UTF-8");
 
         Medication advil = g.fromJson(inputStream, Medication.class);
-        
 
-        System.out.print(advil);
+
+        System.out.println(advil);
     }
 }
