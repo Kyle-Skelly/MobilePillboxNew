@@ -27,4 +27,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     implementation 'com.android.support:design:27.1.1'
     compile 'com.google.code.gson:gson:2.8.0'
+    // https://mvnrepository.com/artifact/com.ning/async-http-client
+    compile group: 'com.ning', name: 'async-http-client', version: '1.6.4'
+
 }

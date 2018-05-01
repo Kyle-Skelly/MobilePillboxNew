@@ -15,7 +15,12 @@ import android.widget.EditText;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
+import com.google.gson.*;
+import org
 
+import java.io.*;
+import java.net.HttpURLConnection;
+import java.net.*;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -45,6 +50,17 @@ public class MainActivity extends AppCompatActivity {
 
         Cursor data = myDB.getListContents();
 
+        Gson g = new Gson();
+
+        URL FDAServer = new URL("https://api.fda.gov/drug/label.json?");
+
+        HttpURLConnection conn = (HttpURLConnection)
+                FDAServer.openConnection();
+        conn.setRequestProperty("User-Agent", "Mozilla/5.0");
+
+        InputStreamReader inputStream = new InputStreamReader(conn.getInputStream(), "UTF-8");
+
+        Medication advil = g.fromJson(inputStream, Medication.class);
 
         if(data.getCount() == 0){
             Toast.makeText(this, "There are no contents in this list!",Toast.LENGTH_LONG).show();
