@@ -7,25 +7,18 @@ import java.util.List;
 
 public class Medication {
 
-    private Results[] medications;
+    private Results[] results;
 
     public Medication(Results[] medications) {
-        this.medications = medications;
+        this.results = medications;
     }
 
-    public Results[] getMedications() {
-        return medications;
+    public Results[] getResults() {
+        return results;
     }
 
-    public void setMedications(Results[] medications) {
-        this.medications = medications;
-    }
-
-    @Override
-    public String toString() {
-        return "Medication{" +
-                "medications=" + Arrays.toString(medications) +
-                '}';
+    public void setResults(Results[] results) {
+        this.results = results;
     }
 
     public static class Results {
@@ -37,18 +30,6 @@ public class Medication {
         private String[] questions;
         private String[] spl_product_data_elements;
 
-        @Override
-        public String toString() {
-            return "Results{" +
-                    "effective_time=" + effective_time +
-                    ", inactive_ingredient=" + Arrays.toString(inactive_ingredient) +
-                    ", keep_out_of_reach_of_children=" + Arrays.toString(keep_out_of_reach_of_children) +
-                    ", purpose=" + Arrays.toString(purpose) +
-                    ", warnings=" + Arrays.toString(warnings) +
-                    ", questions=" + Arrays.toString(questions) +
-                    ", spl_product_data_elements=" + Arrays.toString(spl_product_data_elements) +
-                    '}';
-        }
 
         public Results(int effective_time, String[] inactive_ingredient, String[] keep_out_of_reach_of_children, String[] purpose, String[] warnings, String[] questions, String[] spl_product_data_elements) {
             this.effective_time = effective_time;
@@ -115,6 +96,25 @@ public class Medication {
         public void setSpl_product_data_elements(String[] spl_product_data_elements) {
             this.spl_product_data_elements = spl_product_data_elements;
         }
+
+        @Override
+        public String toString() {
+            return "Results{" +
+                    "effective_time=" + effective_time +
+                    ", inactive_ingredient=" + Arrays.toString(inactive_ingredient) +
+                    ", keep_out_of_reach_of_children=" + Arrays.toString(keep_out_of_reach_of_children) +
+                    ", purpose=" + Arrays.toString(purpose) +
+                    ", warnings=" + Arrays.toString(warnings) +
+                    ", questions=" + Arrays.toString(questions) +
+                    ", spl_product_data_elements=" + Arrays.toString(spl_product_data_elements) +
+                    '}';
+        }
     }
 
+    @Override
+    public String toString() {
+        return "Medication{" +
+                "medications=" + Arrays.toString(results) +
+                '}';
+    }
 }

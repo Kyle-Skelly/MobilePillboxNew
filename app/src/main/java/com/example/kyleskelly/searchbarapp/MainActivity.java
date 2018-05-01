@@ -24,7 +24,8 @@ public class MainActivity extends AppCompatActivity {
     Button btnAdd;
     EditText editText;
     ListView listView;
-    String url = "http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?apikey=9htuhtcb4ymusd73d4z6jxcj";
+    String url = "https://api.fda.gov/drug/label.json?";
+
 
 
 

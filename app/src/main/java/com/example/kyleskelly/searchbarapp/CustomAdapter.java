@@ -13,12 +13,12 @@ import java.lang.Object;
 
 public class CustomAdapter extends BaseAdapter {
 
-    private List<Medication.MedicationEntity> mResults;
+    private List<Medication.Results> mResults;
     private Context mContext;
     private LayoutInflater inflater;
 
 
-    public CustomAdapter(Context mContext,List<Medication.MedicationEntity> mResults) {
+    public CustomAdapter(Context mContext,List<Medication.Results> mResults) {
         this.mResults = mResults;
         this.mContext = mContext;
     }
@@ -44,7 +44,7 @@ public class CustomAdapter extends BaseAdapter {
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View rowView = inflater.inflate(R.layout.each_list_item, parent, false);
 
-        Medication.MedicationEntity item = (Medication.MedicationEntity) getItem(position);
+        Medication.Results item = (Medication.Results) getItem(position);
 
         TextView effective_time = (TextView) rowView.findViewById(R.id.effective_time);
         TextView purpose = (TextView) rowView.findViewById(R.id.purpose);
