@@ -24,6 +24,8 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
+
+
     DatabaseHelper myDB;
     Button btnAdd;
     EditText editText;
@@ -84,6 +86,73 @@ public class MainActivity extends AppCompatActivity {
                 theList.add(data.getString(1));
                 ListAdapter listAdapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,theList);
                 listView.setAdapter(listAdapter);
+                
+                /*
+                *remove the list_item
+                */
+                
+                 listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+
+                    @Override
+                    public boolean onItemLongClick(AdapterView<?> parent, View view,
+                                                   int position, long id) {
+                        // TODO Auto-generated method stub
+
+                        theList.remove(position);
+
+                        listAdapter.notify();
+
+                        Toast.makeText(MainActivity.this, "Item Deleted", Toast.LENGTH_LONG).show();
+
+                        return true;
+                    }
+
+                });
+                
+                /* set new activity from listview */
+                listView.setOnItemClickListener (new AdapterView.OnItemClickListener () {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+
+                        if (position == 0) {
+                            Intent myIntent = new Intent (view.getContext (), Main2ActivityList.class);
+                            startActivityForResult (myIntent, 0);
+                        }
+                        if (position == 1) {
+                            Intent myIntent = new Intent (view.getContext (), Main2ActivityList.class);
+                            startActivityForResult (myIntent, 1);
+                        }
+                        if (position == 2) {
+                            Intent myIntent = new Intent (view.getContext (), Main2ActivityList.class);
+                            startActivityForResult (myIntent, 2);
+                        }
+                        if (position == 3) {
+                            Intent myIntent = new Intent (view.getContext (), Main2ActivityList.class);
+                            startActivityForResult (myIntent, 3);
+                        }
+                        if (position == 4) {
+                            Intent myIntent = new Intent (view.getContext (), Main2ActivityList.class);
+                            startActivityForResult (myIntent, 4);
+                        }
+                        if (position == 5) {
+                            Intent myIntent = new Intent (view.getContext (), Main2ActivityList.class);
+                            startActivityForResult (myIntent, 5);
+                        }
+                        if (position == 6) {
+                            Intent myIntent = new Intent (view.getContext (), Main2ActivityList.class);
+                            startActivityForResult (myIntent, 6);
+                        }
+                        if (position == 7) {
+                            Intent myIntent = new Intent (view.getContext (), Main2ActivityList.class);
+                            startActivityForResult (myIntent, 7);
+                        }
+
+
+
+
+                    }
+                });
             }
         }
 
