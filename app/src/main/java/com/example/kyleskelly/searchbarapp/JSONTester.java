@@ -8,7 +8,9 @@ import java.util.Arrays;
 import com.google.gson.*;
 
 
-
+/**
+ * Quick class written to make sure that the json is returning properly, using gson library.
+ */
 
 public class JSONTester {
 

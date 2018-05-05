@@ -16,7 +16,6 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 import com.google.gson.*;
-import org
 
 import java.io.*;
 import java.net.HttpURLConnection;
@@ -32,7 +31,11 @@ public class MainActivity extends AppCompatActivity {
     String url = "https://api.fda.gov/drug/label.json?";
 
 
-
+    /**
+     * onCreate method to add functionality to the editText and btnAdd. Using the findViewByID method
+     * I am able to access the editText and btnAdd from my xml files.
+     * @param savedInstanceState
+     */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,8 +44,8 @@ public class MainActivity extends AppCompatActivity {
 
         editText = (EditText) findViewById(R.id.editText);
         btnAdd = (Button) findViewById(R.id.btnAdd);
-
         ListView listView = (ListView) findViewById(R.id.listView);
+
         myDB = new DatabaseHelper(this);
 
         //populate an ArrayList<String> from the database and then view it
@@ -50,7 +53,11 @@ public class MainActivity extends AppCompatActivity {
 
         Cursor data = myDB.getListContents();
 
-        Gson g = new Gson();
+        /*
+        Method that I was using in my JsonTester Class, was unable to get functioning outside of a main method so I commented it out in
+        order to work on it later.
+         */
+        /*Gson g = new Gson();
 
         URL FDAServer = new URL("https://api.fda.gov/drug/label.json?");
 
@@ -61,7 +68,14 @@ public class MainActivity extends AppCompatActivity {
         InputStreamReader inputStream = new InputStreamReader(conn.getInputStream(), "UTF-8");
 
         Medication advil = g.fromJson(inputStream, Medication.class);
+        */
 
+        /**
+         * if/else checker to make sure that the list has contents. Using the getCount() method, if there is no
+         * data inside of the database myDB, then a toast message will occur displaying the message
+         * if there are items in the list, the method will allot the data into the simple_list_item xml element
+         * with the help of the listadapter
+         */
         if(data.getCount() == 0){
             Toast.makeText(this, "There are no contents in this list!",Toast.LENGTH_LONG).show();
         }
@@ -73,12 +87,20 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
+
+        /**
+         * The on click listener allows the user to use the btnAdd. There is an if/else checker to make
+         * sure that the user has entered something into the editText field. If the user tries to use the
+         * addBtn without entering anyting into the editText field, a toast message will occur letting
+         * the user know that there is nothing to be entered. If there is something to be entered, the addData method
+         * is called to enter the new text
+         */
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String newEntry = editText.getText().toString();
                 if(editText.length() !=0) {
-                    AddData(newEntry);
+                    addData(newEntry);
                     editText.setText("");
                 }
                 else {
@@ -90,7 +112,15 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void AddData(String newEntry) {
+    /**
+     * The AddData method inserts the newEntry into the database. Again, an if/else method with toast
+     * messages is used to give assurance that the medication has been entered properly. If the insertData boolean
+     * returns true, then a message "Successfully Entered Medication" is displayed.
+     * If a problem occurs, a toast message flashes letting the user know of this
+     * @param newEntry
+     */
+
+    public void addData(String newEntry) {
         boolean insertData = myDB.addData(newEntry);
 
         if (insertData==true) {

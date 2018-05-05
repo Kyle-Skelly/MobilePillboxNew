@@ -31,7 +31,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignTop="@+id/editText"
         android:background="@color/colorPrimary"
-        android:text="btnAdd"
+        android:text="+"
         android:textAppearance="@style/TextAppearance.AppCompat"
         android:textColor="?attr/colorBackgroundFloating"
         android:textSize="24sp"

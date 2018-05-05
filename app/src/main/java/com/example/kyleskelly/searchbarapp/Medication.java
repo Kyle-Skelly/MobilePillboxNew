@@ -5,6 +5,12 @@ import java.util.Arrays;
 import com.google.gson.*;
 import java.util.List;
 
+/**
+ * Medication is a class that accesses the json stored in the FDA database. The fields in the query
+ * response are mostly arrays of strings, so this needed to reflect that in order to return the
+ * fields correctly
+ */
+
 public class Medication {
 
     private Results[] results;

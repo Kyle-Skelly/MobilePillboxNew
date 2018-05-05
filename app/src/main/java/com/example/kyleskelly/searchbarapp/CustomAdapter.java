@@ -18,6 +18,13 @@ public class CustomAdapter extends BaseAdapter {
     private LayoutInflater inflater;
 
 
+    /**
+     * Auto-Generated Constructors, getters and setters for the CustomAdapter class in which are two fields, the mResults and mContext
+     *
+     * @param mContext
+     * @param mResults
+     */
+
     public CustomAdapter(Context mContext,List<Medication.Results> mResults) {
         this.mResults = mResults;
         this.mContext = mContext;
@@ -38,6 +45,17 @@ public class CustomAdapter extends BaseAdapter {
         return 0;
     }
 
+    /**
+     * This getView method is to display each medication in the ListView. The effective_time and purpose parameters were placeholders until
+     * the method was finished, to be replaced with generic_name and the brand name.
+     * item is a result of the Medication.Results, which uses the getItem(position) to access that specific item in the array of medications
+     * The Layout inflater is used to inflate a specific xml file, in this case the each_list_item is the one xml file being used.
+     * @param position
+     * @param convertView
+     * @param parent
+     * @return rowView
+     */
+
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = (LayoutInflater) mContext
@@ -51,8 +69,7 @@ public class CustomAdapter extends BaseAdapter {
 
         effective_time.setText(item.getEffective_time());
         purpose.setText(purpose.getText());
-
-
+        
 
         return rowView;
 
