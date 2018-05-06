@@ -89,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
                 
                 /*
                 *remove the list_item
+                *@param return
                 */
                 
                  listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
@@ -109,7 +110,10 @@ public class MainActivity extends AppCompatActivity {
 
                 });
                 
-                /* set new activity from listview */
+                /**
+                *declared clicking event of the listview
+                *so that whenever click on item in the listview it will open a new page form as an Main2ActivityList
+                */
                 listView.setOnItemClickListener (new AdapterView.OnItemClickListener () {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
