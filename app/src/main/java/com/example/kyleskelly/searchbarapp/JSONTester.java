@@ -19,9 +19,10 @@ import com.google.gson.*;
 
 	
 		public static void main(String[] args) throws Exception {
-
+                
+	
 	        Gson g = new Gson();
-            String drug;
+                String drug;
 	 
 	        URL FDAServer = new URL("https://api.fda.gov/drug/label.json?search=brand_name:"+ drug);
 
@@ -34,13 +35,14 @@ import com.google.gson.*;
 	        conn.setRequestProperty("User-Agent", "Mozilla/5.0");
 
           	int responseCode = conn.getResponseCode();
-	//		System.out.println("Sending 'GET' request to URL : " + URL);
+	
 			System.out.println("Response Code : " + responseCode);
 
-
+                //read the InputStreamReader
 	        BufferedReader inputStream = new BufferedReader(new InputStreamReader(conn.getInputStream(), "UTF-8"));
 			
           String inputLine;
+         
           String finalString = "";
           while ((inputLine = inputStream.readLine()) != null) {
 			 System.out.println(inputLine);
