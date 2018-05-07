@@ -85,10 +85,18 @@ public class MainActivity extends AppCompatActivity {
                 listView.setAdapter(listAdapter);
 
                 /*
+
                  *remove the list_item
 
 
                 listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+
+                *remove the list_item
+                *@param return
+                */
+                /*
+                 listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+
 
                     @Override
                     public boolean onItemLongClick(AdapterView<?> parent, View view,
@@ -104,11 +112,20 @@ public class MainActivity extends AppCompatActivity {
                         return true;
                     }
 
+
                 })
                 */
 
                 /* set new activity from listview
                 Temporarily commented out this method because it was causing the program to not run
+
+=======
+                });
+                
+                /**
+                *declared clicking event of the listview
+                *so that whenever click on item in the listview it will open a new page form as an Main2ActivityList
+                TEMPORARILY REMOVED DUE TO CAUSING THE CODE TO CRASH
 
                 listView.setOnItemClickListener (new AdapterView.OnItemClickListener () {
                     @Override
@@ -152,6 +169,7 @@ public class MainActivity extends AppCompatActivity {
 
 
                     }
+
                 });
                 */
             }
