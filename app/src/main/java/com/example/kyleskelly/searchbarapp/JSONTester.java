@@ -58,3 +58,27 @@ import com.google.gson.*;
 		System.out.println(advil);
 	}
 }
+=======
+                //read the InputStreamReader
+	        BufferedReader inputStream = new BufferedReader(new InputStreamReader(conn.getInputStream(), "UTF-8"));
+			
+          String inputLine;
+         
+          String finalString = "";
+          while ((inputLine = inputStream.readLine()) != null) {
+			 System.out.println(inputLine);
+            finalString+=inputLine;
+		}
+		inputStream.close();
+     
+
+          
+          
+          
+	  Medication medicine = g.fromJson(finalString, Medication.class);
+	  System.out.println(medicine.toString());
+
+	    }
+
+	}
+>>>>>>> cfa902339d74b2aa9b207b5dbb166c1b5efd8fd7
