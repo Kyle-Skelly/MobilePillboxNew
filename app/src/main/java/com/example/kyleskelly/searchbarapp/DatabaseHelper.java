@@ -13,12 +13,12 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
-    public static final String DATABASE_NAME = "mbp.db"; //Mobile Pillbox Database
-    public static final String TABLE_NAME = "medications_data";
+    private static final String DATABASE_NAME = "mbp.db"; //Mobile Pillbox Database
+    private static final String TABLE_NAME = "medications_data";
     public static final String COL1 = "ID";
-    public static final String COL2 = "ITEM1";
+    private static final String COL2 = "ITEM1";
 
-    public DatabaseHelper(Context context)
+    DatabaseHelper(Context context)
     {
         super(context,DATABASE_NAME,null,1);
     }

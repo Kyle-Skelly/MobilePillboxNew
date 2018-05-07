@@ -69,7 +69,7 @@ public class CustomAdapter extends BaseAdapter {
 
         effective_time.setText(item.getEffective_time());
         purpose.setText(purpose.getText());
-        
+
 
         return rowView;
 

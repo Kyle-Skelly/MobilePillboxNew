@@ -9,6 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -60,15 +61,11 @@ public class MainActivity extends AppCompatActivity {
         order to work on it later.
          */
         /*Gson g = new Gson();
-
         URL FDAServer = new URL("https://api.fda.gov/drug/label.json?");
-
         HttpURLConnection conn = (HttpURLConnection)
                 FDAServer.openConnection();
         conn.setRequestProperty("User-Agent", "Mozilla/5.0");
-
         InputStreamReader inputStream = new InputStreamReader(conn.getInputStream(), "UTF-8");
-
         Medication advil = g.fromJson(inputStream, Medication.class);
         */
 
@@ -86,12 +83,12 @@ public class MainActivity extends AppCompatActivity {
                 theList.add(data.getString(1));
                 ListAdapter listAdapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,theList);
                 listView.setAdapter(listAdapter);
-                
+
                 /*
-                *remove the list_item
-                */
-                
-                 listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+                 *remove the list_item
+
+
+                listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
 
                     @Override
                     public boolean onItemLongClick(AdapterView<?> parent, View view,
@@ -107,9 +104,12 @@ public class MainActivity extends AppCompatActivity {
                         return true;
                     }
 
-                });
-                
-                /* set new activity from listview */
+                })
+                */
+
+                /* set new activity from listview
+                Temporarily commented out this method because it was causing the program to not run
+
                 listView.setOnItemClickListener (new AdapterView.OnItemClickListener () {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -153,6 +153,7 @@ public class MainActivity extends AppCompatActivity {
 
                     }
                 });
+                */
             }
         }
 
